@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doorbell Intercom</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Material Icons for UI buttons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Ambient Glow -->
+  <div class="ambient-glow"></div>
+
+  <div class="intercom-container">
+    <div class="video-wrapper">
+      <video id="remote-video" autoplay playsinline muted></video>
+      
+      <!-- Overlay showing call status -->
+      <div id="status-overlay" class="overlay active">
+        <div class="ring-animation"></div>
+        <h2 id="status-text">Standing By...</h2>
+      </div>
+    </div>
+
+    <div class="controls glass-panel">
+      
+      <!-- Call Actions -->
+      <div class="action-group">
+        <button id="btn-accept" class="btn btn-action success hidden">
+          <span class="material-icons-round">call</span>
+        </button>
+        <button id="btn-reject" class="btn btn-action danger hidden">
+          <span class="material-icons-round">call_end</span>
+        </button>
+      </div>
+
+      <!-- In-call controls -->
+      <div class="in-call-group hidden" id="incall-controls">
+        <button id="btn-mute" class="btn btn-tool">
+          <span class="material-icons-round" id="mute-icon">mic</span>
+        </button>
+        <button id="btn-unlock" class="btn btn-primary glow">
+          <span class="material-icons-round">vpn_key</span>
+          <span>Unlock Door</span>
+        </button>
+        <button id="btn-hangup" class="btn btn-tool danger">
+          <span class="material-icons-round">close</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Local compiled mediasoup client bundle -->
+  <script src="mediasoup-client.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

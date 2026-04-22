@@ -1,0 +1,20 @@
+{
+  "name": "sip-webrtc-bridge",
+  "version": "1.0.0",
+  "description": "SIP to WebRTC bridge for DNAKE C112",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "dependencies": {
+    "browserify": "^17.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mediasoup": "^3.14.8",
+    "mediasoup-client": "^3.18.7",
+    "sdp-transform": "^2.14.1",
+    "selfsigned": "^5.5.0",
+    "sip": "^0.0.6",
+    "socket.io": "^4.7.5"
+  }
+}
